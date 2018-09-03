@@ -6,7 +6,7 @@ from math import sqrt
 from scipy.stats import norm
 	
 #load data from file
-data = pd.read_csv("D:/log3.txt", delimiter=';',  names = ["N", "type", "from_mobile"])
+data = pd.read_csv("D:/log.txt", delimiter=',',  names = ["N", "type", "from_mobile"])
 
 #group data by request type and aggregate by 'from_mobile' value,  
 stats = data.groupby(['type']).agg({'from_mobile': [np.mean, np.sum, np.size]})
